@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <jp.anddev68.Kantore.HeaderView
+        android:id="@+id/headerView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:background="@drawable/background" />
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5" >
+
+        <include android:id="@+id/calc" layout="@layout/calc"/>
+        
+        <jp.anddev68.Kantore.PaintView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </jp.anddev68.Kantore.PaintView>
+    
+
+    
+    </ViewFlipper>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         >
+
+        <Button
+            android:id="@+id/change_calc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="電卓" />
+
+        <Button
+            android:id="@+id/change_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="メモ帳" />
+    </LinearLayout>
+
+</LinearLayout>
