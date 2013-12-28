@@ -4,10 +4,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
 
@@ -32,7 +34,17 @@ public class TitleActivity extends Activity {
 		setContentView(R.layout.activity_title);
 
 		button_start = (ImageButton) findViewById(R.id.imageButton1);
-		
+		final Activity act = this;
+		button_start.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(act,MainActivity.class);
+				act.startActivity(intent);
+			}
+			
+			
+		});
 		
 		/* タイトル画面にアニメーションを施す処理 */
 		final Handler handler = new Handler();	//	ハンドラ―作成

@@ -1,52 +1,104 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+    android:id="@+id/relativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity" >
-
-    <jp.anddev68.Kantore.HeaderView
-        android:id="@+id/headerView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="5"
-        android:background="@drawable/background" />
-
-    <ViewFlipper
-        android:id="@+id/viewFlipper1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="5" >
-
-        <include android:id="@+id/calc" layout="@layout/calc"/>
-        
-        <jp.anddev68.Kantore.PaintView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </jp.anddev68.Kantore.PaintView>
-    
-
-    
-    </ViewFlipper>
+    android:layout_height="match_parent" >
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         >
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity" >
 
-        <Button
-            android:id="@+id/change_calc"
+        <jp.anddev68.Kantore.HeaderView
+            android:id="@+id/headerView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@drawable/background" />
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="電卓" />
+            android:layout_weight="5" >
 
-        <Button
-            android:id="@+id/change_memo"
+            <include
+                android:id="@+id/calc"
+                layout="@layout/calc" />
+
+            <jp.anddev68.Kantore.PaintView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </jp.anddev68.Kantore.PaintView>
+        </ViewFlipper>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="メモ帳" />
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/change_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="電卓" />
+
+            <Button
+                android:id="@+id/change_memo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="メモ帳" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30" />
+
+    <ImageView
+        android:id="@+id/waku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/relativeLayout1"
+        android:layout_centerHorizontal="true"
+        
+        android:src="@drawable/waku" />
+
+    <TextView
+        android:id="@+id/quest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="問題文"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/time"
+        android:layout_weight="5"
+        android:text="0" />
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:src="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/cross"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:src="@drawable/cross" />
+
+</RelativeLayout>
